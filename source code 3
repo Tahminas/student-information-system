@@ -1,0 +1,99 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class Student {  String name,stuNo;
+    int classes;
+    Course mat;
+    Course music;
+
+    Course art;
+    double avarage;
+    boolean isPass;
+    private Object m;
+
+
+    Student(String name, int classes, String stuNo, Course mat,Course music,Course art) {
+        this.name = name;
+        this.classes = classes;
+        this.stuNo = stuNo;
+        this.mat = mat;
+        this.music= music;
+        this.art = art;
+        calcAvarage();
+        this.isPass = false;
+    }
+
+
+    public void addBulkExamGrade(int mat, int music, int art) {
+
+        if (mat >= 0 && mat <= 100) {
+            this.mat.grade = mat;
+        }
+
+        if (music >= 0 && music <= 100) {
+            this.music.grade= music;
+        }
+
+        if (art >= 0 && art <= 100) {
+            this.art.grade = art;
+        }
+
+    }
+
+    public void addVerbalGrade(int mat, int music, int art) {
+
+        if (mat >= 0 && mat<= 100) {
+            this.mat.verbalGrade = mat;
+        }
+        if (music >= 0 && music<= 100) {
+            this.music.verbalGrade = music;
+        }
+        if (mat >= 0 && mat<= 100) {
+            this.mat.verbalGrade = mat;
+        }
+        if (art >= 0 && art<= 100) {
+            this.art.verbalGrade = art;
+        }
+    }
+
+
+
+
+    public void isPass() {
+        if (this.mat.grade == 0 || this.music.grade == 0 || this.art.grade == 0) {
+            System.out.println("Notlar tam olarak girilmemiş");
+        } else {
+            this.isPass = isCheckPass();
+            printNote();
+            System.out.println("Ortalama : " + this.avarage);
+            if (this.isPass) {
+                System.out.println("Sınıfı Geçti. ");
+            } else {
+                System.out.println("Sınıfta Kaldı.");
+            }
+        }
+    }
+
+    public void calcAvarage() {
+        this.avarage = (((this.music.verbalGrade*0.20) + (this.music.grade*0.80)) + (this.mat.grade*0.80) +(this.mat.verbalGrade*0.20))+(this.art.verbalGrade*0.20)+(this.art.grade*0.80)/ 3;
+    }
+
+    public boolean isCheckPass() {
+        calcAvarage();
+        return this.avarage > 55;
+    }
+
+    public void printNote(){
+        System.out.println("=========================");
+        System.out.println("Student: " + this.name);
+        System.out.println("Mathematic grade : " + this.mat.grade);
+        System.out.println("Music grade : " + this.music.grade);
+        System.out.println("Art grade: " + this.art.grade);
+    }
+
+}

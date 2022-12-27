@@ -1,0 +1,39 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class Main {
+
+    public static void main(String[] args) {
+        Course mat = new Course("Math", "105", "MAT");
+        Course music = new Course("Music", "106", "MSC");
+        Course art = new Course("Art", "107", "AR");
+
+        Teacher t1 = new Teacher("Tom", "905333333333", "MAT");
+        Teacher t2 = new Teacher(" Alisa", "905222222222", "MSC");
+        Teacher t3 = new Teacher("Jane ", "905111111111", "AR");
+
+        mat.addTeacher(t1);
+        music.addTeacher(t2);
+        art.addTeacher(t3);
+
+        Student s1 = new Student("Lily", 4, "11111111", mat, music, art);
+        s1.addBulkExamGrade(100,30,89);
+        s1.isPass();
+
+        Student s2 = new Student("David", 4, "222222222", mat, music, art);
+        s2.addBulkExamGrade(78,95,66);
+        s2.isPass();
+
+        Student s3 = new Student("Melissa", 4, "3333333333", mat, music, art);
+        s3.addBulkExamGrade(90,90,54);
+        s3.isPass();
+
+
+    }
+
+}

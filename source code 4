@@ -1,0 +1,25 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class Teacher {
+    String name ;
+    String mpno;
+    String branch;
+
+    Teacher(String name, String mpno, String branch){
+        this.name= name;
+        this.mpno= mpno;
+        this.branch=branch;
+
+    }
+    void print(){
+        System.out.println("Name:"+ this.name);
+        System.out.println("Mobilephone no:"+ this.mpno);
+        System.out.println("Branch:"+ this.branch);
+    }
+}
